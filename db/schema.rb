@@ -10,9 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_05_27_150844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "expertises", force: :cascade do |t|
+    t.string "category"
+    t.text "description"
+    t.text "address"
+    t.integer "daily_rate"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_expertises_on_user_id"
+  end
+
+  create_table "missions", force: :cascade do |t|
+    t.integer "price"
+    t.string "status"
+    t.date "starting_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.bigint "expertise_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expertise_id"], name: "index_missions_on_expertise_id"
+    t.index ["user_id"], name: "index_missions_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "expertises", "users"
+  add_foreign_key "missions", "expertises"
+  add_foreign_key "missions", "users"
 end
