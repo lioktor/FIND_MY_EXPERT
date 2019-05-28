@@ -1,9 +1,9 @@
-<h1>Expertises#index</h1>
+<h1>List of all Expertises</h1>
 <ul>
  <% @expertises.each do |expertise| %>
-  <li><%= link_to expertise.name, expertise_path(expertise)%>
-   <%= link_to "Delete", expertise_path(expertise), method: :delete,  data: { confirm: "Are u sure do you want to delete?"} %>
-   <%= link_to "Update", expertise_path(expertise), method: :update,  data: { confirm: "Are u sure do you want to edit?"} %>
+  <li><%= link_to expertise.category, expertise_path(expertise)%>
+   <%= link_to "Delete", expertise_path(expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"} %>
+   <%= link_to "Update", expertise_path(expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"} %>
    </li>
  <% end %>
 </ul>
@@ -11,4 +11,3 @@
 <%= link_to 'New Expertise', new_expertise_path %>
  </div>
 </div>
-<p>Find me in app/views/expertises/index.html.erb</p>
