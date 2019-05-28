@@ -1,2 +1,9 @@
-<h1>Missions#new</h1>
-<p>Find me in app/views/missions/new.html.erb</p>
+<p> Bonjour <% @user %></p>
+<h3>Add a mission</h3>
+
+<%= simple_form_for [@user, @mission] do |f| %>
+  <%= f.input :starting_date %>
+   <%= f.input :end_date %>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>
+
