@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  # root to: 'pages#home'
-  resources :users
+  root to: 'pages#home'
+  # resources :users
+  devise_for :users
   resources :expertises
   resources :missions
 
