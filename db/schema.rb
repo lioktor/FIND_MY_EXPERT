@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_150844) do
+ActiveRecord::Schema.define(version: 2019_05_28_085919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2019_05_27_150844) do
     t.text "description"
     t.text "address"
     t.integer "daily_rate"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_expertises_on_user_id"
   end
 
@@ -31,23 +31,25 @@ ActiveRecord::Schema.define(version: 2019_05_27_150844) do
     t.string "status"
     t.date "starting_date"
     t.date "end_date"
-    t.bigint "user_id"
     t.bigint "expertise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["expertise_id"], name: "index_missions_on_expertise_id"
     t.index ["user_id"], name: "index_missions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.boolean "type"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "expertises", "users"
   add_foreign_key "missions", "expertises"
-  add_foreign_key "missions", "users"
 end
