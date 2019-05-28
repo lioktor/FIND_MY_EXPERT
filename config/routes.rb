@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'missions/index'
   get 'missions/new'
   get 'missions/create'
