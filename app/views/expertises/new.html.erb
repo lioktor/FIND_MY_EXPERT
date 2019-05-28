@@ -1,2 +1,12 @@
 <h1>Expertises#new</h1>
-<p>Find me in app/views/expertises/new.html.erb</p>
+
+<%= simple_form_for @expertise do |f| %>
+ <%= f.input :category, collection: ["Sureté", "Sécurité", "Coordination SSI", "Sécurité electronique"] %>
+ <%= f.input :description %>
+ <%= f.input :address %>
+ <%= f.input :daily_rate %>
+ <%= f.button :submit, class: "btn-primary" %>
+<% end %>
+
+<%= link_to 'Index of all Expertises', expertises_path %>
+
