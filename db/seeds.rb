@@ -16,7 +16,7 @@ FSD = User.create!(first_name: "Flavie", last_name: "Sicard", email: "fsicard141
 eva_expertise_A = Expertise.create!(category: "security", description: "10 years experience as a Security Officer", address: "Marseille", daily_rate: 700, user_id: 1)
 eva_expertise_B = Expertise.create!(category: "cybersecurity", description: "hacker since 9 yo", address: "Marseille", daily_rate: 700, user_id: 1)
 lka_expertise_A = Expertise.create!(category: "safety", description: "10 years as a fireman in BSPP", address: "Paris", daily_rate: 500, user_id: 2)
-lka_expertise_A = Expertise.create!(category: "security", description: "2 years as a Security Officer", address: "Paris", daily_rate: 500, user_id: 2)
+lka_expertise_A = Expertise.create!(category: "systems", description: "2 years as a systems technician", address: "Paris", daily_rate: 500, user_id: 2)
 
 
 # LKA seeds missions
