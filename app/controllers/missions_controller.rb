@@ -8,9 +8,10 @@ class MissionsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @mission = Mission.new(mission_params)
-    @mission.user = @user
+    # @user = current_user
+    # @mission = Mission.new(mission_params)
+    # @mission.user = @user
+    @mission = current_user.missions.build(mission_params)
     if @mission.save
       redirect_to user_path(@user)
     else
@@ -21,7 +22,7 @@ class MissionsController < ApplicationController
 
   def edit
     @mission = Mission.find(param[:id])
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
   def update
@@ -42,6 +43,6 @@ class MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:price, :starting_date, :end_end, :status, :user_id, :expertise_id)
+    params.require(:mission).permit(:price, :starting_date, :end_end, :status, :expertise_id)
   end
 end
