@@ -1,13 +1,38 @@
-<h1>List of all Expertises</h1>
-<ul>
- <% @expertises.each do |expertise| %>
-  <li><%= link_to expertise.category, expertise_path(expertise)%>
-   <%= link_to "Delete", expertise_path(expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"} %>
-   <%= link_to "Update", expertise_path(expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"} %>
-   </li>
- <% end %>
-</ul>
+    <h1>List of all Expertises</h1>
+
+     <% @expertises.each do |expertise| %>
+     <div class="card-product">
+      <% if expertise.category == "security" %>
+        <%= image_tag "security.png" %>
+        <% elsif expertise.category == "safety"%>
+        <%= image_tag "safety.png" %>
+        <% elsif expertise.category == "systems" %>
+        <%= image_tag "systems.png" %>
+        <% elsif expertise.category == "cybersecurity" %>
+        <%= image_tag "cybersecurity.png" %>
+          <% else %>
+        <img src="xxx" alt= "no image">
+        <% end %>
+        <div class="card-product-infos">
+          <h2>
+            <%= link_to expertise.category, expertise_path(expertise)%>
+          </h2>
+          <div class= "inline-buttons">
+            <button class= "btn btn-danger">
+              <%= link_to "Delete", expertise_path(expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"} %>
+            </button>
+            <button class= "btn btn-success">
+              <%= link_to "Update", expertise_path(expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"} %>
+            </button>
+          </div>
+        </div>
+     </div>
+     <% end %>
+
+
 
 <%= link_to 'New Expertise', new_expertise_path %>
  </div>
 </div>
+
+
