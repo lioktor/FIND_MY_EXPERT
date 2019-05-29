@@ -1,36 +1,48 @@
-    <h1>List of all Expertises</h1>
+<h1 class="h1-in-pages">List of all Expertises availables</h1>
+<div class="flex-container">
 
-     <% @expertises.each do |expertise| %>
-     <div class="card-product">
+  <div class= "row col-12 col-lg-6">
+
+    <% @expertises.each do |expertise| %>
+    <div class="flex_item card-product">
       <% if expertise.category == "security" %>
-        <%= image_tag "security.png" %>
-        <% elsif expertise.category == "safety"%>
-        <%= image_tag "safety.png" %>
-        <% elsif expertise.category == "systems" %>
-        <%= image_tag "systems.png" %>
-        <% elsif expertise.category == "cybersecurity" %>
-        <%= image_tag "cybersecurity.png" %>
-          <% else %>
-        <img src="xxx" alt= "no image">
-        <% end %>
-        <div class="card-product-infos">
-          <h2>
-            <%= link_to expertise.category, expertise_path(expertise)%>
-          </h2>
-            <div class= "inline-buttons">
-              <%= link_to "Delete", expertise_path(expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"}, class: "btn btn-danger" %>
-              <%= link_to "Update", expertise_path(expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"}, class: "btn btn-warning" %>
-            </div>
+      <%= image_tag "security.png" %>
+      <% elsif expertise.category == "safety"%>
+      <%= image_tag "safety.png" %>
+      <% elsif expertise.category == "systems" %>
+      <%= image_tag "systems.png" %>
+      <% elsif expertise.category == "cybersecurity" %>
+      <%= image_tag "cybersecurity.png" %>
+      <% else %>
+      <img src="xxx" alt= "no image">
+      <% end %>
 
-        </div>
-     </div>
-     <% end %>
+      <% if expertise.user.last_name == "Vella" %>
+      <%= image_tag "eddy.jpeg" %>
+      <% elsif expertise.user.last_name == "Ktorza"%>
+      <%= image_tag "lionel.jpeg" %>
+      <% else %>
+      <img src="xxx" alt= "no image">
+      <% end %>
 
+      <div class="card-product-infos">
+        <h2>
+        <%= link_to expertise.category, expertise_path(expertise)%>
+        </h2>
 
-<br>
-
-<%= link_to 'New Expertise', new_expertise_path, class: "btn-primary" %>
- </div>
+      </div>
+    </div>
+    <% end %>
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    <br>
+    <div class="row col-12">
+      <%= link_to 'Add a new Expertise!', new_expertise_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
-
-
