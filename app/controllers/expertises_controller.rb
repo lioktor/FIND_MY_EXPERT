@@ -1,6 +1,14 @@
 class ExpertisesController < ApplicationController
   def index
-    @expertises = Expertise.all
+    @expertises = Expertise.where.not(latitude: nil, longitude: nil)
+
+    @markers = @expertises.map do |expertise|
+      {
+        lat: expertise.latitude,
+        lng: expertise.longitude
+      }
+    end
+
   end
 
   def new
@@ -36,7 +44,7 @@ class ExpertisesController < ApplicationController
   def destroy
     @expertise = Expertise.find(params[:id])
     @expertise.destroy
-    redirect_to_expertises_path
+    redirect_to expertises_path
   end
 
   private
