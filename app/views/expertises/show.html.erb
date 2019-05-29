@@ -1,8 +1,22 @@
 <!-- <div class="card-trip"> -->
-    <%= image_tag "security.jpg", width: 1500, height: 600%>
-  <!-- <div class="card-trip-infos"> -->
-    <div class=flex-container>
 
+  <!-- <div class="card-trip-infos"> -->
+  <div class=flex-container>
+
+    <% if @expertise.category == "security" %>
+      <%= image_tag "security.png" %>
+    <% elsif @expertise.category == "safety"%>
+      <%= image_tag "safety.png" %>
+    <% elsif @expertise.category == "systems" %>
+      <%= image_tag "systems.png" %>
+    <% elsif @expertise.category == "cybersecurity" %>
+      <%= image_tag "cybersecurity.png" %>
+    <% else %>
+      <img src="xxx" alt= "no image">
+    <% end %>
+  </div>
+
+  <div class=flex-container>
       <div class=flex-item>
         <h1>Category: <%= @expertise.category %></h1>
         <h2>Your expert: <%= @expertise.user.first_name %> <%= @expertise.user.last_name %></h2>
@@ -14,9 +28,12 @@
         <h3>Daily rate: <%= @expertise.daily_rate %>€</h3>
       </div>
     </div>
+  </div>
     <%= link_to 'Index of all Expertises', expertises_path %>
 <!--      <p class="card-trip-pricing"> Daily rate: <%= @expertise.daily_rate %>€</p> -->
 <!--   </div> -->
 <!-- </div> -->
+
+
 
 
