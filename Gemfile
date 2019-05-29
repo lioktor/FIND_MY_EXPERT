@@ -29,4 +29,5 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'geocoder'
 gem 'bootstrap', '~> 4.3.1'
