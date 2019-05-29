@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('experts.jpg') %>);">
+  <div class="container">
+    <h1><strong> FIND MY EXPERT </strong> </h1>
+
+    <p><strong>Finds you the expertise you need!</strong> </p>
+    <h2> Hire an Expert/Propose your Expertise</h2>
+
+<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-success" %>
+<%= link_to 'Log In', new_user_session_path, class: "btn btn-primary" %>
+
+ <!--    <a class="btn btn-primary" href="#">Sign Up</a>
+
+
+    <a class="btn btn-success" href="#">Sign In</a> -->
+
+  </div>
+</div>
