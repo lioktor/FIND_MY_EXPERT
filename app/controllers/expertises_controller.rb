@@ -8,7 +8,11 @@ class ExpertisesController < ApplicationController
   end
 
   def create
-    @expertise = Expertise.new(expertise_params)
+    # @expertise = Expertise.new(expertise_params)
+    # @expertise.user = current_user
+
+    @expertise = current_user.expertises.build(expertise_params)
+
     if @expertise.save
       redirect_to expertise_path(@expertise)
     else
@@ -37,6 +41,6 @@ class ExpertisesController < ApplicationController
 
   private
   def expertise_params
-    params.require(:expertise).permit(:category, :description, :address, :daily_rate, :user_id)
+    params.require(:expertise).permit(:category, :description, :address, :daily_rate)
   end
 end
