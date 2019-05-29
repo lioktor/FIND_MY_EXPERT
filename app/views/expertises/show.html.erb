@@ -1,5 +1,21 @@
-<h1><%= @expertise.category %></h1>
-<h2><%= @expertise.description %></h2>
-<h2><%= @expertise.address %></h2>
-<h2><%= @expertise.daily_rate %></h2>
-<h2><%= @expertise.user.last_name %> <%= @expertise.user.first_name %></h2>
+<!-- <div class="card-trip"> -->
+    <%= image_tag "security.jpg", width: 1500, height: 600%>
+  <!-- <div class="card-trip-infos"> -->
+    <div class=flex-container>
+
+      <div class=flex-item>
+        <h1>Category: <%= @expertise.category %></h1>
+        <h2>Your expert: <%= @expertise.user.first_name %> <%= @expertise.user.last_name %></h2>
+        <p><%= @expertise.description %></p>
+        <p>at <%= @expertise.address %></p>
+      </div>
+
+      <div class=flex-item>
+        <h3>Daily rate: <%= @expertise.daily_rate %>€</h3>
+      </div>
+    </div>
+<!--      <p class="card-trip-pricing"> Daily rate: <%= @expertise.daily_rate %>€</p> -->
+<!--   </div> -->
+<!-- </div> -->
+
+
