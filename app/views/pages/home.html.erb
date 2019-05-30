@@ -1,21 +1,24 @@
 
+<div class="main-container">
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('experts.jpg') %>);">
-  <div class="container">
-    <h1><strong> FIND MY EXPERT </strong> </h1>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('experts.jpg') %>);">
+    <div class="container">
+      <h1><strong> FIND MY EXPERT </strong> </h1>
 
-    <p><strong>For people who take safety seriously</strong> </p>
-    <h2> Hire an Expert/Propose your Expertise</h2>
+      <p><strong>For people who take safety seriously</strong> </p>
+      <h2> Hire an Expert/Propose your Expertise</h2>
 
-<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-success" %>
-<%= link_to 'Log In', new_user_session_path, class: "btn btn-primary" %>
-<!--<%= link_to 'Expertises', expertises_path, class: "btn btn-light" %>-->
+  <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-success" %>
+  <%= link_to 'Log In', new_user_session_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 
- <!--    <a class="btn btn-primary" href="#">Sign Up</a>
+  <div class="body d-flex justify-content-around">
 
-
-    <a class="btn btn-success" href="#">Sign In</a> -->
-
+    <h2 style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('security-small.png') %>);">Security</h2>
+    <h2 style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('safety-small.png') %>);">Safety</h2>
+    <h2 style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('cybersecurity-small.png') %>);">Cybersecurity</h2>
+    <h2 style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('systems-small.png') %>);">Systems</h2>
   </div>
 </div>
 
