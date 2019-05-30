@@ -30,9 +30,8 @@
           <!-- <a class="dropdown-item" href="#">My expertises</a> -->
            <%= link_to 'Expertises Index', expertises_path, class: "dropdown-item" %>
           <%= link_to 'My Expertises', expertises_path, class: "dropdown-item" %>
-          <a class="dropdown-item" href="#">My missions</a>
+          <%= link_to 'My Missions', missions_path, class: "dropdown-item" %>
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
-          <!-- <a class="dropdown-item" href="users/sign_out">Log out</a> -->
         </div>
       </li>
     </ul>

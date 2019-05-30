@@ -5,9 +5,10 @@
 <h3>want to add a mission?</h3>
 <p>please fill</p>
 
-<%= simple_form_for [@user, @mission] do |f| %>
+<%= simple_form_for [@mission] do |f| %>
   <%= f.input :starting_date %>
-   <%= f.input :end_date %>
+  <%= f.input :end_date %>
+
   <%= f.submit class: "btn btn-primary"%>
 <% end %>
 

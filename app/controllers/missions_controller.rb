@@ -12,11 +12,12 @@ class MissionsController < ApplicationController
     # @mission = Mission.new(mission_params)
     # @mission.user = @user
     @mission = current_user.missions.build(mission_params)
+    # @price = (end_date - starting_date) * current_user.daily_rate
     if @mission.save
-      redirect_to user_path(@user)
+      redirect_to "missions/show"# redirect_to user_path(@user)
     else
       @expertise = Expertise.new
-      render "users/show"
+      render :new  #"users/show"
     end
   end
 
