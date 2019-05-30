@@ -1,7 +1,7 @@
 <h1 class="h1-in-pages">List of all Expertises availables</h1>
 <div class="flex-container">
 
-  <div class= "row col-12 col-lg-6">
+  <div class= "row col-12 col-lg-8">
 
     <% @expertises.each do |expertise| %>
     <div class="flex_item card-product">
@@ -31,18 +31,24 @@
         </h2>
 
       </div>
+
     </div>
     <% end %>
+      <div class="row col-12 margin-button-index-expertise">
+      <%= link_to 'Add a new Expertise!', new_expertise_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <div class="row map">
       <div
         id="map"
-        style="width: 100%;
+        style="width: 500px;
         height: 600px;"
+
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
     <br>
-    <div class="row col-12">
-      <%= link_to 'Add a new Expertise!', new_expertise_path, class: "btn btn-primary" %>
-    </div>
+
   </div>
 </div>
