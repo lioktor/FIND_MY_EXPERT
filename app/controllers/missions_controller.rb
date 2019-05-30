@@ -5,16 +5,20 @@ class MissionsController < ApplicationController
 
   def new
     @mission = Mission.new
+    @expertise = Expertise.find(params[:expertise_id])
   end
 
   def create
     # @user = current_user
     # @mission = Mission.new(mission_params)
     # @mission.user = @user
+    @expertise = Expertise.find(params[:expertise_id])
     @mission = current_user.missions.build(mission_params)
-    # @price = (end_date - starting_date) * current_user.daily_rate
+    @mission.expertise = @expertise
+    @mission.price = (@mission.end_date - @mission.starting_date) * @expertise.daily_rate
+
     if @mission.save
-      redirect_to "missions/show"# redirect_to user_path(@user)
+      redirect_to mission_path(@mission)
     else
       @expertise = Expertise.new
       render :new  #"users/show"
@@ -32,7 +36,7 @@ class MissionsController < ApplicationController
   end
 
   def show
-    # @mission = Mission.find(params[:id])
+    @mission = Mission.find(params[:id])
   end
 
   def destroy
@@ -44,6 +48,6 @@ class MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:price, :starting_date, :end_end, :status, :expertise_id)
+    params.require(:mission).permit(:starting_date, :end_date)
   end
 end
