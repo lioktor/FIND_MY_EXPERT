@@ -1,4 +1,15 @@
 <h1 class="h1-in-pages">List of all Expertises availables</h1>
+  <div class="row col-10 search-form-control from-group align-center-navbar">
+    <%= form_tag expertises_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an expertise"
+    %>
+    <%= button_tag "Search", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+
 <div class="flex-container">
 
   <div class= "row col-12 col-lg-6">

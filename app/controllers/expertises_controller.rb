@@ -9,6 +9,13 @@ class ExpertisesController < ApplicationController
       }
     end
 
+    if params[:query].present?
+      sql_query = "category ILIKE :query OR description ILIKE :query"
+      @expertises = Expertise.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @expertises = Expertise.all
+    end
+
   end
 
   def new
