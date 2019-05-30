@@ -12,6 +12,10 @@
       <%= f.input :last_name,
                   required: true,
                   input_html: { autocomplete: "last_name" } %>
+      <%= f.input :user_type,
+                  required: true,
+                  collection: ["client", "expert"],
+                  input_html: { autocomplete: "user_type" } %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
