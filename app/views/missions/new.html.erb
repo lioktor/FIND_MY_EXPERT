@@ -1,14 +1,9 @@
-<p> Bonjour <%= current_user.first_name %></p>
-
-
-
-<h3>want to add a mission?</h3>
+<h3>Do want to add a mission?</h3>
 <p>please fill</p>
 
-<%= simple_form_for [@mission] do |f| %>
+<%= simple_form_for [@expertise, @mission] do |f| %>
   <%= f.input :starting_date %>
   <%= f.input :end_date %>
-
   <%= f.submit class: "btn btn-primary"%>
 <% end %>
 
