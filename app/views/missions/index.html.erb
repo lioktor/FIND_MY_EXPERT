@@ -1,5 +1,9 @@
 <h1>Missions#index</h1>
 <% @missions.each do |mission| %>
+<%= @category %>
+<%= mission.price %>
 <%= mission.status %>
+
 <% end %>
 <p>au boulot</p>
+ <%= link_to 'Add a new mission!', new_mission_path, class: "btn btn-primary" %>
