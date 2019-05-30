@@ -7,16 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # LKA seeds users
-EVA = User.create!(first_name: "Eddy", last_name: "Vella", email: "evella21@gamil.fr", password: "areeety", user_type:"expert")
-LKA = User.create!(first_name: "Lionel", last_name: "Ktorza", email: "lka121@gamil.fr", password: "azeeeeuji", user_type:"expert")
-FMY = User.create!(first_name: "Fiona", last_name: "Murray", email: "fmurray131a@gamil.fr", password: "oleeek", user_type:"client")
-FSD = User.create!(first_name: "Flavie", last_name: "Sicard", email: "fsicard141@gamil.fr", password: "ghheeeh", user_type:"client")
+EVA = User.create!(first_name: "Eddy", last_name: "Vella", email: "evella21É@gamil.fr", password: "areeety", user_type:"expert")
+LKA = User.create!(first_name: "Lionel", last_name: "Ktorza", email: "lka12É1@gamil.fr", password: "azeeeeuji", user_type:"expert")
+FMY = User.create!(first_name: "Fiona", last_name: "Murray", email: "fmurray1É31a@gamil.fr", password: "oleeek", user_type:"client")
+FSD = User.create!(first_name: "Flavie", last_name: "Sicard", email: "fsicardÉ141@gamil.fr", password: "ghheeeh", user_type:"client")
 
 # LKA seeds expertise
-eva_expertise_A = Expertise.create!(category: "security", description: "10 years experience as a Security Officer", address: "Marseille", daily_rate: 700, user_id: 1)
-eva_expertise_B = Expertise.create!(category: "cybersecurity", description: "hacker since 9 yo", address: "Marseille", daily_rate: 700, user_id: 1)
-lka_expertise_A = Expertise.create!(category: "safety", description: "10 years as a fireman in BSPP", address: "Paris", daily_rate: 500, user_id: 2)
-lka_expertise_A = Expertise.create!(category: "systems", description: "2 years as a systems technician", address: "Paris", daily_rate: 500, user_id: 2)
+eva_expertise_A = Expertise.create!(category: "security", description: "10 years experience as a Security Officer", address: "Cannes", daily_rate: 700, user_id: 1, latitude: 7.017369, longitude: 43.552847)
+eva_expertise_B = Expertise.create!(category: "cybersecurity", description: "hacker since 9 yo", address: "Marseille", daily_rate: 700, user_id: 1, latitude: 5.36978, longitude: 43.296482)
+lka_expertise_A = Expertise.create!(category: "safety", description: "10 years as a fireman in BSPP", address: "Orléans", daily_rate: 500, user_id: 2, latitude: 1.909251, longitude: 47.902964)
+lka_expertise_A = Expertise.create!(category: "systems", description: "2 years as a systems technician", address: "Paris", daily_rate: 500, user_id: 2, latitude: 2.3488, longitude: 48.8534)
 
 
 # LKA seeds missions
