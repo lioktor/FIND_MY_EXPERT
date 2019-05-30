@@ -1,8 +1,9 @@
 .h1-in-pages {
   color: gray;
-  text-align: center;
+  text-align: left;
   margin-bottom: 30px;
   margin-top: 30px;
+  margin-left: 30px
 }
 
 .align-center-navbar {
@@ -61,3 +62,12 @@
   }
 }
 
+.btn-choose {
+    color: white;
+    background-color: light-green;
+    border-color: green;
+    margin-left: 0px;
+    border-radius: 50%;
+    padding: 10px 10px;
+    font-size: 20px;
+}

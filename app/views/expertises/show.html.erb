@@ -23,6 +23,7 @@
     <% else %>
       <img src="xxx" alt= "no image">
     <% end %>
+
   </div>
 </div>
 
@@ -44,13 +45,14 @@
 <div class= "inline-buttons">
   <%= link_to "Delete", expertise_path(@expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"}, class: "btn btn-danger" %>
   <%= link_to "Update", expertise_path(@expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"}, class: "btn btn-warning" %>
-
 </div>
+
   <div class=flex-item>
-    <%= link_to 'Index of all Expertises', expertises_path, class: "btn btn-info" %>
+<%= link_to "Book him!", new_expertise_mission_path(@expertise), class: "btn btn-choose" %>
   </div>
 </div>
-<%= link_to "Choose", new_expertise_mission_path(@expertise), class: "btn btn-warning" %>
+
+    <%= link_to 'Index of all Expertises', expertises_path %>
 <!--      <p class="card-trip-pricing"> Daily rate: <%= @expertise.daily_rate %>€</p> -->
 <!--   </div> -->
 <!-- </div> -->
