@@ -1,21 +1,24 @@
 class ExpertisesController < ApplicationController
   def index
-    @expertises = Expertise.where.not(latitude: nil, longitude: nil)
+    # @expertises = Expertise
+
+
+
+    if params[:query].present?
+      sql_query = "category ILIKE :query OR description ILIKE :query"
+      @expertises = Expertise.where(sql_query, query: "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
+    else
+      @expertises = Expertise.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @expertises.map do |expertise|
       {
         lat: expertise.latitude,
-        lng: expertise.longitude
+        lng: expertise.longitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { expertise: expertise }),
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
-
-    if params[:query].present?
-      sql_query = "category ILIKE :query OR description ILIKE :query"
-      @expertises = Expertise.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @expertises = Expertise.all
-    end
-
   end
 
   def new
