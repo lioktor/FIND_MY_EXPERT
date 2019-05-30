@@ -13,21 +13,22 @@
 
 
 .search-form-control {
-  position: relative;
+  position: center;
 }
 
 .search-form-control .btn {
   position: absolute;
   top: 3px;
   bottom: 3px;
-  right: 3px;
+  right: -33px;
 }
 
 .search-form-control .form-control {
   height: 3rem;
-  width: 700px;
+  width: 660px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
+  margin-left: 30px;
 }
 
 .search-form-control .form-control:focus {
