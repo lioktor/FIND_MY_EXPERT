@@ -6,9 +6,11 @@
 
     <p>You have booked a mission from: <%= @mission.starting_date %> to: <%= @mission.end_date %></p>
 
-    <p> The total cost of your mission is: <%= @mission.price %> €</p>
+    <p> The total cost of your mission is: <strong><%= @mission.price %> €</strong></p>
+    <p>The status of your mission is: <strong>pending</strong></p>
 
     </div>
+    <%= link_to 'Back to list of expertises', expertises_path, class: "btn btn-secondary" %>
   </div>
 </div>
 
