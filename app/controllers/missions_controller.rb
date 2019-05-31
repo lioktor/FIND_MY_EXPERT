@@ -45,6 +45,11 @@ class MissionsController < ApplicationController
     redirect_to missions_path
   end
 
+  def mymission
+    @user = current_user
+    @mymissions = Mission.where(user_id: @user.id)
+  end
+
   private
 
   def mission_params

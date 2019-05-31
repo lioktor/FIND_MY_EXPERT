@@ -54,7 +54,13 @@ class ExpertisesController < ApplicationController
     redirect_to expertises_path
   end
 
+  def myexpertise
+    @user = current_user
+    @myexpertises = Expertise.where(user_id: @user.id)
+  end
+
   private
+
   def expertise_params
     params.require(:expertise).permit(:category, :description, :address, :daily_rate)
   end
