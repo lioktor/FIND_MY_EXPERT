@@ -50,6 +50,10 @@ class MissionsController < ApplicationController
     @mymissions = Mission.where(user_id: @user.id)
   end
 
+  def myexpertmission
+    @myexpertmissions = current_user.expert_missions
+  end
+
   private
 
   def mission_params

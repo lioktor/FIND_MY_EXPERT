@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :missions do
     collection do
       get 'mymission' => 'missions#mymission'
+      get 'myexpertmission'
     end
   end
 
