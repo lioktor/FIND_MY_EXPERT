@@ -42,6 +42,7 @@ class ExpertisesController < ApplicationController
   def update
     @expertise = Expertise.find(params[:id])
     @expertise.update(expertise_params)
+    redirect_to expertise_path(@expertise)
   end
 
   def show

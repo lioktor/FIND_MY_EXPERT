@@ -15,6 +15,7 @@ tom = User.create!(first_name: "Tom", last_name: "Cruise", email: "tomcruise@gma
 lionel = User.create!(first_name: "Lionel", last_name: "Ktorza", email: "lka121@gamil.fr", password: "azeeeeuji", user_type:"expert")
 kim = User.create!(first_name: "Kim", last_name: "Jong Un", email: "kimjongun@gmail.com", password: "password", user_type:"client")
 
+
 # LKA seeds expertise
 eva_expertise_A = Expertise.create!(
   category: "security",
