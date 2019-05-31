@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # LKA seeds users
-EVA = User.create!(first_name: "Eddy", last_name: "Vella", email: "evella21@gamil.fr", password: "areeety", user_type:"expert")
-LKA = User.create!(first_name: "Lionel", last_name: "Ktorza", email: "lka121@gamil.fr", password: "azeeeeuji", user_type:"expert")
-FMY = User.create!(first_name: "Fiona", last_name: "Murray", email: "fmurray131a@gamil.fr", password: "oleeek", user_type:"client")
-FSD = User.create!(first_name: "Flavie", last_name: "Sicard", email: "fsicard141@gamil.fr", password: "ghheeeh", user_type:"client")
+EVA = User.create!(first_name: "Eddy", last_name: "Vella", email: "evella216@gamil.fr", password: "areeety", user_type:"expert")
+LKA = User.create!(first_name: "Lionel", last_name: "Ktorza", email: "lka1216@gamil.fr", password: "azeeeeuji", user_type:"expert")
+FMY = User.create!(first_name: "Fiona", last_name: "Murray", email: "fmurray1316@gamil.fr", password: "oleeek", user_type:"client")
+FSD = User.create!(first_name: "Flavie", last_name: "Sicard", email: "fsicard1416@gamil.fr", password: "ghheeeh", user_type:"client")
 
 # LKA seeds expertise
 eva_expertise_A = Expertise.create!(category: "security", description: "10 years experience as a Security Officer", address: "Cannes", daily_rate: 700, user_id: 1, latitude: 7.017369, longitude: 43.552847)
