@@ -1,9 +1,20 @@
-<h3>Do want to add a mission?</h3>
-<p>please fill</p>
+<div class="container">
+  <div class="row">
+   <div class="col-12">
 
-<%= simple_form_for [@expertise, @mission] do |f| %>
-  <%= f.input :starting_date %>
-  <%= f.input :end_date %>
-  <%= f.submit class: "btn btn-primary"%>
-<% end %>
+    <h3 class="h1-in-pages text-center">Would you like to add a mission?</h3>
+    <p>Please complete:</p>
+    <div class="narrow-form">
+
+      <%= simple_form_for [@expertise, @mission] do |f| %>
+        <%= f.input :starting_date %>
+        <%= f.input :end_date %>
+        <%= f.submit class: "btn btn-primary"%>
+      <% end %>
+    </div>
+
+    </div>
+  </div>
+</div>
+
 

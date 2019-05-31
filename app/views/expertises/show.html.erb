@@ -43,16 +43,18 @@
 
 <div class="flex-container col-8">
 <div class= "inline-buttons">
-  <%= link_to "Delete", expertise_path(@expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"}, class: "btn btn-danger" %>
-  <%= link_to "Update", expertise_path(@expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"}, class: "btn btn-warning" %>
+  <%= link_to "Delete", expertise_path(@expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"}, class: "btn btn-secondary" %>
+  <%= link_to "Update", expertise_path(@expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"}, class: "btn btn-secondary" %>
 </div>
 
   <div class=flex-item>
-<%= link_to "Book him!", new_expertise_mission_path(@expertise), class: "btn btn-choose" %>
+<%= link_to "Book your expert!", new_expertise_mission_path(@expertise), class: "btn btn-success" %>
   </div>
 </div>
 
+<div class="flex-container col-8">
     <%= link_to 'Index of all Expertises', expertises_path %>
+  </div>
 <!--      <p class="card-trip-pricing"> Daily rate: <%= @expertise.daily_rate %>€</p> -->
 <!--   </div> -->
 <!-- </div> -->

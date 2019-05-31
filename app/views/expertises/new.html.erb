@@ -1,12 +1,18 @@
-<h1 class="h1-in-pages">Creation of a new expertise</h1>
+<div class="container">
+  <div class="row">
+   <div class="col-12">
 
-<%= simple_form_for @expertise do |f| %>
- <%= f.input :category, collection: ["security", "safety", "cybersecurity", "systems"] %>
- <%= f.input :description %>
- <%= f.input :address %>
- <%= f.input :daily_rate %>
- <%= f.button :submit, class: "btn-primary" %>
-<% end %>
+     <h1 class="h1-in-pages text-center">Creation of a new expertise</h1>
 
-<%= link_to 'Index of all Expertises', expertises_path %>
+      <%= simple_form_for @expertise do |f| %>
+       <%= f.input :category, collection: ["security", "safety", "cybersecurity", "systems"] %>
+       <%= f.input :description %>
+       <%= f.input :address %>
+       <%= f.input :daily_rate %>
+       <%= f.button :submit, class: "btn-primary" %>
+      <% end %>
 
+      <%= link_to 'Index of all Expertises', expertises_path %>
+   </div>
+  </div>
+</div>
