@@ -1,10 +1,14 @@
+<div class="container">
+  <div class="row">
+   <div class="col-12">
 
-<h2>Congratulations</h2>
-<p>You book a mission of from <%= @mission.starting_date %> to <%= @mission.end_date %></p>
+    <h2 class="h1-in-pages text-center">Congratulations!</h2>
 
-<p> The price of your mission is  <%= @mission.price %> €</p>
+    <p>You have booked a mission from: <%= @mission.starting_date %> to: <%= @mission.end_date %></p>
 
+    <p> The total cost of your mission is: <%= @mission.price %> €</p>
 
-
-
+    </div>
+  </div>
+</div>
 

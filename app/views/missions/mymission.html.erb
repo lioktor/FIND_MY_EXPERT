@@ -1,11 +1,17 @@
-<h1 class="h1-in-pages">My missions</h1>
+<div class="container">
+  <div class="row">
+   <div class="col-12">
+
+    <h1 class="h1-in-pages text-center">My missions</h1>
 
 <div class="flex-container col-8">
   <div class=flex-item>
     <h4><ol>
       <% @mymissions.each do |mission| %>
       <li>from <%= mission.starting_date %> to <%= mission.end_date %> price: <%= mission.price %>€</li>
+
       <% end %>
+
     </ol></h4>
   </div>
   <div class="flex-item" >
@@ -13,4 +19,6 @@
   </div>
 </div>
 
-
+    </div>
+  </div>
+</div>
