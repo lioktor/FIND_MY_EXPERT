@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :expertises do
     resources :missions, only: [:create, :new]
+    collection do
+      get 'myexpertise' => 'expertises#myexpertise'
+    end
   end
   resources :missions do
     collection do
-      get 'mymission'
+      get 'mymission' => 'missions#mymission'
     end
   end
 

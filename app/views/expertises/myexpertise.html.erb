@@ -1,0 +1,13 @@
+<h1 class="h1-in-pages">My expertises</h1>
+
+<div class="flex-container col-8">
+  <div class=flex-item>
+    <h4><ul>
+      <% @myexpertises.each do |expertise| %>
+      <li><%= expertise.description %></li>
+      <% end %>
+    </ul></h4>
+  </div>
+</div>
+
+
