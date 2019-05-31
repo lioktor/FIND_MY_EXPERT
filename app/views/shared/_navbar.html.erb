@@ -24,9 +24,13 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
           <!-- <a class="dropdown-item" href="#">My expertises</a> -->
-           <%= link_to 'List of Expertises available', expertises_path, class: "dropdown-item" %>
+           <%= link_to 'List of expertises available', expertises_path, class: "dropdown-item" %>
           <%= link_to 'My Expertises', myexpertise_expertises_path, class: "dropdown-item" %>
+          <%= link_to 'New expertise', new_expertise_path, class: "dropdown-item" %>
           <%= link_to 'My Missions', mymission_missions_path, class: "dropdown-item" %>
+          <% if current_user.user_type == 'expert' %>
+            <%= link_to 'My Missions as expert', myexpertmission_missions_path, class: "dropdown-item" %>
+            <% end %>
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
         </div>
       </li>

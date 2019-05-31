@@ -26,7 +26,7 @@
     <% elsif @expertise.user.last_name == "Cruise" %>
       <%= image_tag "tom-small.png", class: "img-show" %>
     <% else %>
-      <img src="xxx" alt= "no image">
+     <%= image_tag "mib.jpg", class: "img-show" %>
     <% end %>
 
   </div>
@@ -49,7 +49,7 @@
 <div class="flex-container col-8">
 <div class= "inline-buttons">
   <%= link_to "Delete", expertise_path(@expertise), method: :delete,  data: { confirm: "Are u sure you want to delete?"}, class: "btn btn-danger" %>
-  <%= link_to "Update", expertise_path(@expertise), method: :update,  data: { confirm: "Are u sure you want to edit?"}, class: "btn btn-warning" %>
+  <%= link_to "Update", edit_expertise_path(@expertise),  data: { confirm: "Are u sure you want to edit?"}, class: "btn btn-warning" %>
 </div>
 
   <div class=flex-item>
