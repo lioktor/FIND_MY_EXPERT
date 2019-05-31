@@ -5,7 +5,6 @@ class CreateExpertises < ActiveRecord::Migration[5.2]
       t.text :description
       t.text :address
       t.integer :daily_rate
-      t.references :user, foreign_key: true
 
       t.timestamps
     end
