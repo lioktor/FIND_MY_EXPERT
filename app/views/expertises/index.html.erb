@@ -22,23 +22,25 @@
     <% @expertises.each do |expertise| %>
     <div class="flex_item card-product">
       <% if expertise.category == "security" %>
-      <%= image_tag "security.png" %>
+        <%= image_tag "security.png" %>
       <% elsif expertise.category == "safety"%>
-      <%= image_tag "safety.png" %>
+        <%= image_tag "safety.png" %>
       <% elsif expertise.category == "systems" %>
-      <%= image_tag "systems.png" %>
+        <%= image_tag "systems.png" %>
       <% elsif expertise.category == "cybersecurity" %>
-      <%= image_tag "cybersecurity.png" %>
+        <%= image_tag "cybersecurity.png" %>
       <% else %>
-      <img src="xxx" alt= "no image">
+        <img src="xxx" alt= "no image">
       <% end %>
 
       <% if expertise.user.last_name == "Vella" %>
-      <%= image_tag "eddy.jpeg" %>
+        <%= image_tag "eddy.jpeg" %>
       <% elsif expertise.user.last_name == "Ktorza"%>
-      <%= image_tag "lionel.jpeg" %>
+        <%= image_tag "lionel.jpeg" %>
+      <% elsif expertise.user.last_name == "Cruise"%>
+       <%= image_tag "tom-small.png" %>
       <% else %>
-      <%= image_tag "mib.jpeg" %>
+        <img src="xxx" alt= "no image">
       <% end %>
 
       <div class="card-product-infos">
@@ -59,10 +61,10 @@
       <div
         id="map"
         style="width: 500px;
-        height: 600px;"
+        height: 800px;"
 
         data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['pk.eyJ1IjoiZmxhdmllcyIsImEiOiJjanZpNTBxNDUwMjVrNDRtbDRvb2N0aGQ3In0.Ue5ISqBrz9K9yizNZOiN4Q'] %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
     <br>
 
