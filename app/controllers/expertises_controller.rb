@@ -62,6 +62,6 @@ class ExpertisesController < ApplicationController
   private
 
   def expertise_params
-    params.require(:expertise).permit(:category, :description, :address, :daily_rate)
+    params.require(:expertise).permit(:category, :description, :address, :daily_rate, :id)
   end
 end
