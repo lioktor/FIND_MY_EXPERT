@@ -1,0 +1,16 @@
+<h1 class="h1-in-pages">My Expert missions </h1>
+<%= @myexpertmissions %>
+
+<div class="flex-container col-8">
+  <div class=flex-item>
+    <h4><ol>
+      <% @myexpertmissions.each do |mission| %>
+
+      <li>from <%= mission.starting_date %> to <%= mission.end_date %> price: <%= mission.price %>€</li>
+      <% end %>
+    </ol></h4>
+  </div>
+  <div class="flex-item" >
+
+  </div>
+</div>

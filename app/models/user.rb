@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :expertises, dependent: :destroy
+  has_many :expert_missions, through: :expertises, source: :missions
   has_many :missions, dependent: :destroy
 end
