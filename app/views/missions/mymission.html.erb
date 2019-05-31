@@ -8,7 +8,7 @@
   <div class=flex-item>
     <h4><ol>
       <% @mymissions.each do |mission| %>
-      <li>from <%= mission.starting_date %> to <%= mission.end_date %> price: <%= mission.price %>€</li>
+      <li>from <%= mission.starting_date %> to <%= mission.end_date %>, price: <%= mission.price %>€<!-- , the status is <%= mission.status %> --></li>
 
       <% end %>
 
