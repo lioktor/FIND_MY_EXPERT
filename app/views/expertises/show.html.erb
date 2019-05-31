@@ -1,5 +1,6 @@
 <!-- <div class="card-trip"> -->
 <!-- <div class="card-trip-infos"> -->
+  <h1><%= @expertise.user.last_name %></h1>
 <h1 class="h1-in-pages">Expertise details</h1>
 <div class="flex-container col-8">
   <div class=flex-item>
@@ -15,11 +16,15 @@
       <img src="xxx" alt= "no image">
     <% end %>
   </div>
+
+
   <div class="flex-item" >
     <% if @expertise.user.last_name == "Vella" %>
       <%= image_tag "eddy-small.png", class: "img-show" %>
     <% elsif @expertise.user.last_name == "Ktorza" %>
       <%= image_tag "lionel-small.png", class: "img-show" %>
+    <% elsif @expertise.user.last_name == "Cruise" %>
+      <%= image_tag "tom-small.png", class: "img-show" %>
     <% else %>
       <img src="xxx" alt= "no image">
     <% end %>

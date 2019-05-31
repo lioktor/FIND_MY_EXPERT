@@ -16,6 +16,10 @@
                   required: true,
                   collection: ["client", "expert"],
                   input_html: { autocomplete: "user_type" } %>
+      <%= f.input :avatar,
+                  as: :file,
+                  required: true,
+                  input_html: { autocomplete: "avatar" } %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -38,3 +42,5 @@
 <div class="container">
 <%= render "devise/shared/links"%>
 </div>
+
+
